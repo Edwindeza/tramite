@@ -1,0 +1,22 @@
+{% extends "principal/tramites.html" %}
+
+
+
+//Detalles del tramite.
+
+{% block cuerpo %} 
+<br>
+<br>
+<ul>
+  <li>Nombre del Trámite: {{ tramite.nombre }}</li>
+  <li>Oficinas por donde pasa:
+    <ul>
+      {% for oficina in tramite.oficinas.all %}
+        <li>{{ oficina }}</li>
+      {% endfor %}
+    </ul>
+  </li>
+  <li>Descipción del trámite: {{ tramite.descripcion }}</li>
+  <li>Fecha de ultima Actualización: {{ tramite.fechaModificacion }}</li>
+</ul>
+{% endblock %}

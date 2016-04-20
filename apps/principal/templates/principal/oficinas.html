@@ -1,0 +1,26 @@
+{% extends "principal/base.html" %}
+
+{% block navegador %}
+<nav>
+  <ul class="nav nav-pills" >
+    <li role="presentation"><a href="{% url 'principal:principal' %}">Inicio</a></li>
+    <li role="presentation" class="active"><a href="{% url 'principal:oficinas' %}"> Oficinas</a></li>
+    <li role="presentation"><a href="{% url 'principal:tramites' %}">Tramites</a></li>
+    <li role="presentation"><a href="{% url 'principal:grupo' %}">Grupo</a></li>
+  </ul>
+</nav>
+<br>
+<br>
+{% endblock %}
+
+
+
+
+
+{% block cuerpo %}
+  <ul>
+  {% for oficina in oficinas %}
+    <li>{{ oficina }}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
